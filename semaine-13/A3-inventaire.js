@@ -49,6 +49,7 @@ const TAUX = 2800;
 console.table(produits);
 
 // 2. Filtrer la catégorie Informatique
+
 const produitsInformatique = produits.filter(function(produit) {
     return produit.categorie === "Informatique";
 });
@@ -57,6 +58,7 @@ console.log("Produits Informatique :", produitsInformatique.length);
 console.table(produitsInformatique);
 
 // 3. Ajouter le prix en dollars
+
 const produitsAvecUSD = produits.map(function(produit) {
     return {
         ...produit,
@@ -67,6 +69,7 @@ const produitsAvecUSD = produits.map(function(produit) {
 console.table(produitsAvecUSD);
 
 // 4. Rechercher un produit
+
 function chercherProduit(id) {
     const produit = produits.find(function(element) {
         return element.id === id;
