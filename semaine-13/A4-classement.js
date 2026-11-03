@@ -23,3 +23,48 @@ Comment classer le bulletin de la meilleure à la moins bonne moyenne avec .sort
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+
+const eleves = [
+    { nom: "Amani", notes: [14, 16, 15] },
+    { nom: "Bijou", notes: [17, 18, 16] },
+    { nom: "Christian", notes: [8, 11, 9] },
+    { nom: "Divine", notes: [12, 10, 14] },
+    { nom: "Exaucé", notes: [16, 15, 19] }
+];
+
+// 1. Calculer la moyenne avec une boucle et un accumulateur
+function calculerMoyenne(notes) {
+    let total = 0;
+
+    for (let i = 0; i < notes.length; i++) {
+        total += notes[i];
+    }
+
+    const moyenne = total / notes.length;
+
+    return Math.round(moyenne * 10) / 10;
+}
+
+// 2. Créer le bulletin avec map()
+const bulletin = eleves.map(function(eleve) {
+    const moyenne = calculerMoyenne(eleve.notes);
+    let mention;
+
+    if (moyenne >= 16) {
+        mention = "Excellent";
+    } else if (moyenne >= 10) {
+        mention = "Admis";
+    } else {
+        mention = "Rattrapage";
+    }
+
+    return {
+        nom: eleve.nom,
+        moyenne: moyenne,
+        mention: mention
+    };
+});
+
+
+
+
