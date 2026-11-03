@@ -31,3 +31,61 @@ Comment afficher seulement les colonnes nom et stock avec console.table() ? Et q
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+
+
+
+const produits = [
+    { id: 101, nom: "Clé USB 32 Go", categorie: "Informatique", prixFC: 14000, stock: 25 },
+    { id: 102, nom: "Sac à dos Kadea", categorie: "Accessoires", prixFC: 42000, stock: 0 },
+    { id: 103, nom: "Souris sans fil", categorie: "Informatique", prixFC: 28000, stock: 12 },
+    { id: 104, nom: "Gourde isotherme", categorie: "Accessoires", prixFC: 21000, stock: 8 },
+    { id: 105, nom: "Casque audio", categorie: "Informatique", prixFC: 70000, stock: 0 },
+    { id: 106, nom: "Carnet de notes", categorie: "Papeterie", prixFC: 7000, stock: 40 }
+];
+
+const TAUX = 2800;
+
+// 1. Afficher tous les produits
+console.table(produits);
+
+// 2. Filtrer la catégorie Informatique
+const produitsInformatique = produits.filter(function(produit) {
+    return produit.categorie === "Informatique";
+});
+
+console.log("Produits Informatique :", produitsInformatique.length);
+console.table(produitsInformatique);
+
+// 3. Ajouter le prix en dollars
+const produitsAvecUSD = produits.map(function(produit) {
+    return {
+        ...produit,
+        prixUSD: Math.round(produit.prixFC / TAUX)
+    };
+});
+
+console.table(produitsAvecUSD);
+
+// 4. Rechercher un produit
+function chercherProduit(id) {
+    const produit = produits.find(function(element) {
+        return element.id === id;
+    });
+
+    if (produit === undefined) {
+        return "Produit introuvable";
+    }
+
+    return produit;
+}
+
+console.log("Recherche 104 :", chercherProduit(104));
+console.log("Recherche 999 :", chercherProduit(999));
+
+// 5. Compter les produits en rupture
+const produitsEnRupture = produits.filter(function(produit) {
+    return produit.stock === 0;
+});
+
+console.log("Produits en rupture :", produitsEnRupture.length);
+console.table(produitsEnRupture);
