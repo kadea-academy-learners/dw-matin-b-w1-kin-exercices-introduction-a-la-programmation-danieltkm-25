@@ -22,3 +22,24 @@ Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+
+const age = 16;
+
+// 1. Opérateur ternaire : déterminer le statut
+const statut = age >= 18 ? "majeur" : "mineur";
+
+// 2. Conditions : calculer le tarif
+let tarif;
+
+if (age < 5) {
+    tarif = "gratuit";
+} else if (age < 18) {
+    tarif = "500 FC";
+} else {
+    tarif = "1 000 FC";
+}
+
+// 3. Afficher les deux résultats dans une phrase
+console.log(`Statut : ${statut} — Tarif : ${tarif}`);
+
+
