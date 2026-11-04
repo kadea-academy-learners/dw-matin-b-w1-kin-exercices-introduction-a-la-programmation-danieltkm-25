@@ -26,6 +26,7 @@ Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ? Et pourquoi toFixed() e
 
 
 
+
 function calculerLivraison(distanceKm, poidsKg, estUrgent = false) {
 
     let tarif;
@@ -59,3 +60,4 @@ function calculerLivraison(distanceKm, poidsKg, estUrgent = false) {
 console.log(calculerLivraison(3, 2));
 console.log(calculerLivraison(10, 12, true));
 console.log(calculerLivraison(20, 5));
+
