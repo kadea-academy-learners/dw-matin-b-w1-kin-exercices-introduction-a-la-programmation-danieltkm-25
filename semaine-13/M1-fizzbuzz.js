@@ -21,3 +21,24 @@ Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeu
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+
+for (let i = 1; i <= 30; i++) {
+
+    // On teste d'abord les multiples de 3 ET de 5.
+    // Sinon, 15 serait reconnu comme multiple de 3
+    // et afficherait seulement "Malewa".
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("MalewaWewa");
+
+    } else if (i % 3 === 0) {
+        console.log("Malewa");
+
+    } else if (i % 5 === 0) {
+        console.log("Wewa");
+
+    } else {
+        console.log(i);
+    }
+}
+
+
