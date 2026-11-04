@@ -68,3 +68,4 @@ const bulletin = eleves.map(function(eleve) {
 
 
 
+
