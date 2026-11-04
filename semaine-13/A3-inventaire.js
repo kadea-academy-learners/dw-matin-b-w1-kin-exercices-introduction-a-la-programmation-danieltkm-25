@@ -34,6 +34,8 @@ Comment afficher seulement les colonnes nom et stock avec console.table() ? Et q
 
 
 
+
+
 const produits = [
     { id: 101, nom: "Clé USB 32 Go", categorie: "Informatique", prixFC: 14000, stock: 25 },
     { id: 102, nom: "Sac à dos Kadea", categorie: "Accessoires", prixFC: 42000, stock: 0 },
@@ -49,7 +51,6 @@ const TAUX = 2800;
 console.table(produits);
 
 // 2. Filtrer la catégorie Informatique
-
 const produitsInformatique = produits.filter(function(produit) {
     return produit.categorie === "Informatique";
 });
@@ -58,7 +59,6 @@ console.log("Produits Informatique :", produitsInformatique.length);
 console.table(produitsInformatique);
 
 // 3. Ajouter le prix en dollars
-
 const produitsAvecUSD = produits.map(function(produit) {
     return {
         ...produit,
@@ -69,7 +69,6 @@ const produitsAvecUSD = produits.map(function(produit) {
 console.table(produitsAvecUSD);
 
 // 4. Rechercher un produit
-
 function chercherProduit(id) {
     const produit = produits.find(function(element) {
         return element.id === id;
