@@ -21,3 +21,15 @@ Quelle est la liste complète des valeurs falsy en JavaScript ? (Indice : il y e
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+const estRempli = valeur => valeur ? "rempli" : "vide";
+
+console.log(estRempli(''));          // vide
+console.log(estRempli('Esther'));    // rempli
+console.log(estRempli(0));           // vide
+console.log(estRempli(42));          // rempli
+console.log(estRempli(null));        // vide
+console.log(estRempli(undefined));   // vide
+console.log(estRempli(NaN));         // vide
+console.log(estRempli(' '));         // rempli
+console.log(estRempli('0'));         // rempli
+console.log(estRempli(false));      // vide
