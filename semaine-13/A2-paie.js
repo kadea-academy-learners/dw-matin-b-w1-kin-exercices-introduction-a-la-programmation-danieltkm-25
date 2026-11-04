@@ -23,6 +23,11 @@ La méthode .reduce() n'a pas été vue en atelier. Explique ce qu'elle fait et 
 
 
 
+
+
+
+
+
 const heuresSemaine = [8, 9, 10, 8, 7, 6];
 
 const jours = [
@@ -34,24 +39,26 @@ const jours = [
     "samedi"
 ];
 
-// 1. Calculer le total des heurs avec forEach()
+// 1. Calculer le total des heures avec forEach()
 let totalHeures = 0;
 
-heuresSemaine.forEach(function(heures){
+heuresSemaine.forEach(function(heures) {
     totalHeures += heures;
 });
 
-// 2. calculer le salaire avec les heures supplémentaires
+// 2. Calculer le salaire avec les heures supplémentaires
 function calculerSalaire(heures, tauxHoraire = 2500) {
     const heuresNormales = Math.min(heures, 40);
     const heuresSupplementaires = Math.max(heures - 40, 0);
 
     const salaireNormal = heuresNormales * tauxHoraire;
-    const salaireSupplementaire = heuresSupplementaires * tauxHoraire * 1.5;
+    const salaireSupplementaire =
+        heuresSupplementaires * tauxHoraire * 1.5;
 
     return salaireNormal + salaireSupplementaire;
 }
-// 3. Trouver le jour le plus chargé avec une boucle for 
+
+// 3. Trouver le jour le plus chargé avec une boucle for
 let indexMax = 0;
 
 for (let i = 1; i < heuresSemaine.length; i++) {
@@ -60,15 +67,13 @@ for (let i = 1; i < heuresSemaine.length; i++) {
     }
 }
 
-// 4. afficher les résultats
-
+// 4. Afficher les résultats
 const salaire = calculerSalaire(totalHeures);
 
 console.log("Total :", totalHeures, "h");
-console.log("salaire :", salaire, "FC");
-console.log("Jour le plus chargé :",
+console.log("Salaire :", salaire, "FC");
+console.log(
+    "Jour le plus chargé :",
     jours[indexMax],
-    "(" + heuresSemaine[indexMax] + "h)"
+    "(" + heuresSemaine[indexMax] + " h)"
 );
-
-
