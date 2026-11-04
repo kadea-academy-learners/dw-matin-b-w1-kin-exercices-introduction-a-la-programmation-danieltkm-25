@@ -23,3 +23,28 @@ Pourquoi typeof null renvoie-t-il 'object' alors que null n'est pas un objet ?
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+
+// const : la variable ne sera pas réaffectée.
+const prenom = "Grâce"; // const : le prénom reste identique.
+const age = 22; // const : l'âge ne sera pas réaffecté.
+const commune = "Lemba"; // const : la commune reste identique.
+const estInscrit = true; // const : la valeur booléenne reste identique.
+
+// let : la variable est déclarée sans valeur et pourra être réaffectée.
+let surnom; // let : sa valeur pourra être définie plus tard.
+
+// const : la variable contient null et ne sera pas réaffectée.
+const ancienneFormation = null;
+
+// Afficher la fiche avec un seul gabarit littéral.
+console.log(`Je m'appelle ${prenom}, j'ai ${age} ans et j'habite à ${commune}.`);
+
+// Afficher le type de chaque variable.
+console.log(typeof prenom);
+console.log(typeof age);
+console.log(typeof commune);
+console.log(typeof estInscrit);
+console.log(typeof surnom);
+console.log(typeof ancienneFormation);
+
+
