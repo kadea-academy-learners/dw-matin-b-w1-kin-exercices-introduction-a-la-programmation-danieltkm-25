@@ -31,15 +31,35 @@ Le troisième bug vient de l'« insertion automatique de point-virgule » (ASI).
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
-const doubler = (n) => { n * 2; };
-console.log(doubler(4));           // undefined ?!
+//const doubler = (n) => { n * 2; };
+//console.log(doubler(4));           // undefined ?!
 
-const calculerTva = (prix) => { console.log(prix * 0.16); };
+//const calculerTva = (prix) => { console.log(prix * 0.16); };
+//const total = calculerTva(1000) + 500;
+//console.log(total);                // NaN ?!
+
+//const saluer = (prenom) => {
+  //return
+  //  `Mbote ${prenom}`;
+//};
+//console.log(saluer('Ney'));        // undefined ?!
+
+
+const doubler = (n) => {
+    // Bug corrigé : return renvoie le résultat du calcul.
+    return n * 2;
+};
+console.log(doubler(4)); // 8
+
+const calculerTva = (prix) => {
+    // Bug corrigé : on renvoie le montant au lieu de seulement l'afficher.
+    return prix * 0.16;
+};
 const total = calculerTva(1000) + 500;
-console.log(total);                // NaN ?!
+console.log(total); // 660
 
 const saluer = (prenom) => {
-  return
-    `Mbote ${prenom}`;
+    // Bug corrigé : le texte est sur la même ligne que return.
+    return `Mbote ${prenom}`;
 };
-console.log(saluer('Ney'));        // undefined ?!
+console.log(saluer('Ney')); // Mbote Ney
